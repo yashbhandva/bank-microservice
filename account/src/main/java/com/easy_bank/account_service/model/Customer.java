@@ -1,0 +1,26 @@
+package com.easy_bank.account_service.model;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class Customer extends BaseEntity{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "customer_id")
+    private Long customerId;
+
+    private String name;
+
+    @Column(unique = true)
+    private String email;
+
+    @Column(name = "mobile_number")
+    private String mobileNumber;
+}
