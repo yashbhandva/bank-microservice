@@ -1,6 +1,10 @@
 server:
   port: 8090
+
 spring:
+  application:
+    name: loan-service
+
   datasource:
     url: jdbc:postgresql://localhost:5432/loans_db
     username: postgres
@@ -15,3 +19,13 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8070/eureka/  # Eureka server ka URL
+    register-with-eureka: true      # Client ko Eureka server me register karna hai
+    fetch-registry: true            # Server se registry fetch karna hai
+  instance:
+    prefer-ip-address: true          # IP address use karke register kare
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
