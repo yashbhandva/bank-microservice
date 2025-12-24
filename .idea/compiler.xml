@@ -3,7 +3,13 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for loans" enabled="true">
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eurekaserver" />
+      </profile>
+      <profile name="Annotation profile for cards" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -12,12 +18,21 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
         </processorPath>
         <module name="loans" />
-        <module name="account" />
         <module name="cards" />
+      </profile>
+      <profile name="Annotation profile for account-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
+        </processorPath>
+        <module name="account" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="account-service (1)" target="24" />
+      <module name="configserver" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -25,6 +40,8 @@
       <module name="account" options="-parameters" />
       <module name="account-service (1)" options="-parameters" />
       <module name="cards" options="-parameters" />
+      <module name="configserver" options="-parameters" />
+      <module name="eurekaserver" options="-parameters" />
       <module name="loans" options="-parameters" />
     </option>
   </component>
