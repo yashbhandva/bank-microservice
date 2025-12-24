@@ -78,7 +78,7 @@ public class AccountServiceImpl implements AccountService {
                 .name(customer.getName())
                 .email(customer.getEmail())
                 .mobileNumber(customer.getMobileNumber())
-                .requestDto(accountRequestDto)
+                .accountDto(accountRequestDto)
                 .build();
 
     }
@@ -87,7 +87,7 @@ public class AccountServiceImpl implements AccountService {
     @Transactional
     public boolean updateAccount(CustomerDto customerDto) {
 
-        AccountDto accountDto = customerDto.getRequestDto();
+        AccountDto accountDto = customerDto.getAccountDto();
         if (accountDto == null) {
             return false;
         }
