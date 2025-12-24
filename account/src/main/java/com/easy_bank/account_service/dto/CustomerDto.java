@@ -24,5 +24,5 @@ public class CustomerDto {
     @Pattern(regexp = "^$|[0-9]{10}" ,message = "mobile number must be contain 10 number")
     private String mobileNumber;
 
-    private AccountDto requestDto;
+    private AccountDto accountDto;
 }
